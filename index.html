@@ -1,0 +1,1967 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kokila Printers | Printing & Insurance Services</title>
+  <meta name="description" content="Kokila Printers in Kottaipattinam provides premium printing services and trusted insurance services including vehicle, commercial vehicle, accident and family health insurance.">
+  <meta name="theme-color" content="#ffffff">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #070707;
+      --muted: #626875;
+      --muted-2: #8a909b;
+      --line: rgba(0, 0, 0, 0.08);
+      --soft-line: rgba(0, 0, 0, 0.055);
+      --orange: #ff6a00;
+      --orange-dark: #e95d00;
+      --orange-soft: #fff1e6;
+      --black: #090909;
+      --white: #ffffff;
+      --shadow: 0 28px 80px rgba(0, 0, 0, 0.14);
+      --shadow-soft: 0 16px 38px rgba(0, 0, 0, 0.08);
+      --radius-xl: 34px;
+      --radius-lg: 26px;
+      --radius-md: 18px;
+      --container: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body::selection {
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .ambient-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+      background: #ffffff;
+    }
+
+    .ambient-bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(255, 106, 0, 0.12), transparent 30%),
+        radial-gradient(circle at 88% 16%, rgba(0, 0, 0, 0.045), transparent 28%),
+        radial-gradient(circle at 78% 88%, rgba(255, 106, 0, 0.09), transparent 34%),
+        linear-gradient(180deg, #ffffff 0%, #fffaf6 100%);
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 999px;
+      opacity: 0.5;
+      filter: blur(0.2px);
+      transform-style: preserve-3d;
+      box-shadow:
+        inset -28px -34px 70px rgba(255, 106, 0, 0.22),
+        inset 24px 24px 60px rgba(255, 255, 255, 0.7),
+        0 34px 90px rgba(255, 106, 0, 0.14);
+    }
+
+    .orb-one {
+      width: 360px;
+      height: 360px;
+      right: -90px;
+      top: 7%;
+      background: radial-gradient(circle at 30% 28%, #fff, #ffd2a8 34%, #ff7a1a 72%, rgba(255, 106, 0, 0.18));
+    }
+
+    .orb-two {
+      width: 230px;
+      height: 230px;
+      left: -70px;
+      bottom: 18%;
+      background: radial-gradient(circle at 30% 25%, #fff, #ffe0c8 38%, rgba(255, 106, 0, 0.28));
+      opacity: 0.34;
+    }
+
+    .orb-three {
+      width: 160px;
+      height: 160px;
+      right: 18%;
+      bottom: 8%;
+      background: radial-gradient(circle at 30% 25%, #fff, #ffe7d3 40%, rgba(0, 0, 0, 0.08));
+      opacity: 0.28;
+    }
+
+    .cube-wrap {
+      position: absolute;
+      left: 6%;
+      bottom: 18%;
+      width: 118px;
+      height: 118px;
+      transform-style: preserve-3d;
+      animation: floatCube 7.5s ease-in-out infinite;
+    }
+
+    .cube {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: spinCube 18s linear infinite;
+    }
+
+    .cube .face {
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(255, 241, 230, 0.72));
+      backdrop-filter: blur(12px);
+      box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.72);
+    }
+
+    .cube .front { transform: translateZ(59px); }
+    .cube .back { transform: rotateY(180deg) translateZ(59px); }
+    .cube .right { transform: rotateY(90deg) translateZ(59px); }
+    .cube .left { transform: rotateY(-90deg) translateZ(59px); }
+    .cube .top { transform: rotateX(90deg) translateZ(59px); }
+    .cube .bottom { transform: rotateX(-90deg) translateZ(59px); }
+
+    .sheet {
+      position: absolute;
+      width: 168px;
+      height: 224px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(255, 244, 235, 0.92));
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.11);
+      transform-style: preserve-3d;
+      animation: floatSheet 8s ease-in-out infinite;
+    }
+
+    .sheet::before {
+      content: "";
+      position: absolute;
+      inset: 22px 20px auto;
+      height: 112px;
+      border-radius: 12px;
+      background:
+        linear-gradient(to bottom, rgba(255, 106, 0, 0.9) 0 12px, transparent 12px 20px),
+        repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.12) 0 2px, transparent 2px 18px);
+      opacity: 0.7;
+    }
+
+    .sheet::after {
+      content: "";
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 24px;
+      height: 14px;
+      border-radius: 999px;
+      background: var(--orange);
+      box-shadow: 0 12px 0 rgba(255, 106, 0, 0.16);
+    }
+
+    .sheet-one {
+      right: 12%;
+      top: 42%;
+      transform: rotateZ(-18deg) rotateY(24deg);
+    }
+
+    .sheet-two {
+      left: 18%;
+      top: 18%;
+      width: 122px;
+      height: 162px;
+      transform: rotateZ(14deg) rotateY(-20deg);
+      animation-delay: -2s;
+      opacity: 0.72;
+    }
+
+    header,
+    main,
+    footer {
+      position: relative;
+      z-index: 2;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--container));
+      margin: 0 auto;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 18px;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      padding: 0 20px;
+    }
+
+    .nav-inner {
+      width: min(100%, var(--container));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 12px 14px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(22px);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      min-width: max-content;
+      font-weight: 900;
+      letter-spacing: -0.045em;
+    }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--black), #2a2a2a);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .logo-mark::after {
+      content: "";
+      position: absolute;
+      inset: 5px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 11px;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.02;
+    }
+
+    .logo-text strong {
+      font-size: 16px;
+    }
+
+    .logo-text span {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: #2d3138;
+      font-size: 14px;
+      font-weight: 750;
+    }
+
+    .nav-links a {
+      position: relative;
+      transition: color 0.25s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -8px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--orange);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--orange);
+    }
+
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 850;
+      letter-spacing: -0.015em;
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .btn-primary {
+      color: #ffffff;
+      background: var(--orange);
+      box-shadow: 0 16px 32px rgba(255, 106, 0, 0.28);
+    }
+
+    .btn-primary:hover {
+      background: var(--orange-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 20px 40px rgba(255, 106, 0, 0.34);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.78);
+      border-color: var(--line);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 106, 0, 0.26);
+      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.09);
+    }
+
+    .nav-cta {
+      min-height: 42px;
+      padding: 11px 17px;
+      font-size: 14px;
+    }
+
+    .hero {
+      min-height: 100vh;
+      padding: 150px 0 96px;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(380px, 0.98fr);
+      gap: 56px;
+      align-items: center;
+    }
+
+    .eyebrow,
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--orange);
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before,
+    .section-kicker::before {
+      content: "";
+      width: 30px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--orange);
+    }
+
+    .hero-title {
+      margin: 20px 0 0;
+      max-width: 760px;
+      font-size: clamp(46px, 7vw, 86px);
+      line-height: 0.94;
+      letter-spacing: -0.075em;
+    }
+
+    .hero-title .accent {
+      color: var(--orange);
+    }
+
+    .hero-subtitle {
+      margin: 24px 0 0;
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 660px;
+      margin-top: 32px;
+    }
+
+    .point {
+      padding: 16px;
+      border: 1px solid var(--soft-line);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.055);
+      backdrop-filter: blur(14px);
+    }
+
+    .point strong {
+      display: block;
+      font-size: 20px;
+      letter-spacing: -0.04em;
+    }
+
+    .point span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .hero-visual {
+      min-height: 560px;
+      perspective: 1100px;
+    }
+
+    .visual-stage {
+      position: relative;
+      width: 100%;
+      height: 560px;
+      transform-style: preserve-3d;
+    }
+
+    .visual-card {
+      position: absolute;
+      z-index: 3;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 30px;
+      background: #111111;
+      box-shadow: 0 42px 90px rgba(17, 24, 39, 0.24);
+      transform-style: preserve-3d;
+    }
+
+    .visual-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(1.04) contrast(1.03);
+    }
+
+    .visual-main {
+      width: 70%;
+      height: 68%;
+      left: 15%;
+      top: 12%;
+      transform: rotateY(-12deg) rotateX(8deg);
+    }
+
+    .visual-main::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.72), transparent 58%);
+    }
+
+    .visual-caption {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      z-index: 2;
+      color: #ffffff;
+    }
+
+    .visual-caption strong {
+      display: block;
+      font-size: 24px;
+      letter-spacing: -0.04em;
+    }
+
+    .visual-caption span {
+      display: block;
+      margin-top: 5px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .visual-side {
+      width: 42%;
+      height: 34%;
+      border-radius: 24px;
+    }
+
+    .side-one {
+      left: 0;
+      bottom: 12%;
+      transform: rotateY(18deg) rotateZ(-8deg) translateZ(72px);
+    }
+
+    .side-two {
+      right: 0;
+      top: 3%;
+      transform: rotateY(-20deg) rotateZ(7deg) translateZ(96px);
+    }
+
+    .side-three {
+      right: 10%;
+      bottom: 0;
+      width: 34%;
+      height: 24%;
+      transform: rotateY(14deg) rotateZ(5deg) translateZ(118px);
+    }
+
+    .mini-label {
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      z-index: 2;
+      padding: 8px 11px;
+      border-radius: 999px;
+      color: #ffffff;
+      background: rgba(0, 0, 0, 0.56);
+      backdrop-filter: blur(14px);
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    .visual-ring {
+      position: absolute;
+      z-index: 1;
+      width: 330px;
+      height: 330px;
+      right: 8%;
+      top: 18%;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 106, 0, 0.24);
+      box-shadow: inset 0 0 40px rgba(255, 106, 0, 0.08);
+      transform: rotateX(64deg) rotateZ(-24deg);
+    }
+
+    .visual-ring::before,
+    .visual-ring::after {
+      content: "";
+      position: absolute;
+      inset: 36px;
+      border-radius: inherit;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .visual-ring::after {
+      inset: 78px;
+      border-color: rgba(255, 106, 0, 0.22);
+    }
+
+    .visual-cube {
+      position: absolute;
+      z-index: 4;
+      width: 86px;
+      height: 86px;
+      right: 24%;
+      top: 5%;
+      transform-style: preserve-3d;
+      animation: visualCubeFloat 5.2s ease-in-out infinite;
+    }
+
+    .visual-cube .face {
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(255, 255, 255, 0.42);
+      border-radius: 19px;
+      background: linear-gradient(135deg, rgba(255, 106, 0, 0.96), rgba(255, 176, 106, 0.86));
+      box-shadow: 0 22px 48px rgba(255, 106, 0, 0.28);
+    }
+
+    .visual-cube .front { transform: translateZ(43px); }
+    .visual-cube .back { transform: rotateY(180deg) translateZ(43px); }
+    .visual-cube .right { transform: rotateY(90deg) translateZ(43px); }
+    .visual-cube .left { transform: rotateY(-90deg) translateZ(43px); }
+    .visual-cube .top { transform: rotateX(90deg) translateZ(43px); }
+    .visual-cube .bottom { transform: rotateX(-90deg) translateZ(43px); }
+
+    .section {
+      padding: 112px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 34px;
+      margin-bottom: 42px;
+    }
+
+    .section-title {
+      margin: 12px 0 0;
+      max-width: 800px;
+      font-size: clamp(34px, 4.4vw, 58px);
+      line-height: 1;
+      letter-spacing: -0.06em;
+    }
+
+    .section-copy {
+      max-width: 430px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .service-group {
+      margin-top: 56px;
+    }
+
+    .group-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+      font-size: 16px;
+      font-weight: 950;
+      letter-spacing: -0.02em;
+    }
+
+    .group-title .num {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      color: #ffffff;
+      background: var(--black);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      perspective: 1000px;
+    }
+
+    .service-card {
+      position: relative;
+      outline: none;
+      perspective: 1000px;
+    }
+
+    .card-lift {
+      height: 100%;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: var(--shadow-soft);
+      transform-style: preserve-3d;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    }
+
+    .service-card:hover .card-lift,
+    .service-card:focus .card-lift {
+      transform: translateY(-10px);
+      border-color: rgba(255, 106, 0, 0.24);
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.16);
+    }
+
+    .card-media {
+      position: relative;
+      height: 176px;
+      overflow: hidden;
+      background: #f3f3f3;
+    }
+
+    .card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .service-card:hover .card-media img,
+    .service-card:focus .card-media img {
+      transform: scale(1.08);
+    }
+
+    .card-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.34), transparent 62%);
+    }
+
+    .service-tag {
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      z-index: 2;
+      padding: 8px 11px;
+      border-radius: 999px;
+      color: #000000;
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(12px);
+      font-size: 12px;
+      font-weight: 900;
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-content {
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+    }
+
+    .card-content h3 {
+      margin: 0 0 9px;
+      font-size: 20px;
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+    }
+
+    .card-content p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .trust-panel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 38px;
+      padding: 52px;
+      color: #ffffff;
+      background: linear-gradient(135deg, #070707, #191919);
+      box-shadow: 0 34px 90px rgba(0, 0, 0, 0.22);
+    }
+
+    .trust-panel::before {
+      content: "";
+      position: absolute;
+      width: 560px;
+      height: 560px;
+      right: -180px;
+      top: -190px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(255, 106, 0, 0.42), rgba(255, 106, 0, 0.08) 48%, transparent 70%);
+    }
+
+    .trust-panel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(90deg, #000, transparent 80%);
+      opacity: 0.55;
+    }
+
+    .trust-content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 0.86fr 1.14fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .trust-copy .section-kicker {
+      color: #ffad66;
+    }
+
+    .trust-copy .section-kicker::before {
+      background: #ffad66;
+    }
+
+    .trust-copy h2 {
+      margin: 14px 0 0;
+      font-size: clamp(32px, 4vw, 54px);
+      line-height: 1;
+      letter-spacing: -0.06em;
+    }
+
+    .trust-copy p {
+      margin: 18px 0 0;
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .feature-card {
+      min-height: 190px;
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.075);
+      backdrop-filter: blur(14px);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .feature-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      color: #ffffff;
+      background: var(--orange);
+      box-shadow: 0 14px 30px rgba(255, 106, 0, 0.26);
+    }
+
+    .feature-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke-width: 2.2;
+    }
+
+    .feature-card h3 {
+      margin: 18px 0 8px;
+      font-size: 18px;
+      letter-spacing: -0.035em;
+    }
+
+    .feature-card p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .contact-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      padding: 34px;
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(18px);
+    }
+
+    .contact-card.dark {
+      color: #ffffff;
+      background:
+        radial-gradient(circle at 90% 12%, rgba(255, 106, 0, 0.28), transparent 34%),
+        linear-gradient(135deg, #070707, #181818);
+      border-color: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.22);
+    }
+
+    .contact-card h2 {
+      margin: 14px 0 0;
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1;
+      letter-spacing: -0.06em;
+    }
+
+    .contact-card p {
+      margin: 18px 0 0;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.75;
+    }
+
+    .contact-card.dark p {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .contact-card:not(.dark) p {
+      color: var(--muted);
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .contact-card.dark .btn-secondary {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.16);
+    }
+
+    .mini-stat {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .stat {
+      padding: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 24px;
+      letter-spacing: -0.04em;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 4px;
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .contact-info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      min-height: 118px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.055);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .info-item:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 106, 0, 0.24);
+      box-shadow: 0 22px 46px rgba(0, 0, 0, 0.1);
+    }
+
+    .info-icon {
+      flex: 0 0 auto;
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      color: var(--orange);
+      background: var(--orange-soft);
+    }
+
+    .info-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke-width: 2.1;
+    }
+
+    .info-item strong {
+      display: block;
+      font-size: 14px;
+      letter-spacing: -0.01em;
+    }
+
+    .info-item small {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .map-card {
+      grid-column: 1 / -1;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: #f5f5f5;
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.08);
+    }
+
+    .map-card iframe {
+      display: block;
+      width: 100%;
+      height: 360px;
+      border: 0;
+      filter: saturate(0.88) contrast(1.02);
+    }
+
+    .footer {
+      padding: 30px 0 44px;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-weight: 750;
+    }
+
+    .footer-links a:hover {
+      color: var(--orange);
+    }
+
+    @keyframes floatCube {
+      0%, 100% { transform: translate3d(0, 0, 0); }
+      50% { transform: translate3d(0, -22px, 0); }
+    }
+
+    @keyframes spinCube {
+      from { transform: rotateX(-18deg) rotateY(0deg) rotateZ(0deg); }
+      to { transform: rotateX(-18deg) rotateY(360deg) rotateZ(360deg); }
+    }
+
+    @keyframes floatSheet {
+      0%, 100% { transform: rotateZ(-18deg) rotateY(24deg) translate3d(0, 0, 0); }
+      50% { transform: rotateZ(-18deg) rotateY(24deg) translate3d(0, -18px, 0); }
+    }
+
+    @keyframes visualCubeFloat {
+      0%, 100% { transform: translate3d(0, 0, 0) rotateX(12deg) rotateY(-18deg); }
+      50% { transform: translate3d(0, -18px, 0) rotateX(12deg) rotateY(-18deg); }
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 520px;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .trust-content {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .nav-links {
+        display: none;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-copy {
+        margin-top: 16px;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 128px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(calc(100% - 28px), var(--container));
+      }
+
+      .navbar {
+        top: 12px;
+        padding: 0 14px;
+      }
+
+      .nav-inner {
+        border-radius: 24px;
+      }
+
+      .logo-text span {
+        display: none;
+      }
+
+      .hero {
+        padding: 118px 0 72px;
+      }
+
+      .hero-title {
+        font-size: clamp(42px, 14vw, 58px);
+      }
+
+      .hero-subtitle {
+        font-size: 16px;
+      }
+
+      .hero-points {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .hero-visual {
+        min-height: 460px;
+      }
+
+      .visual-stage {
+        height: 460px;
+      }
+
+      .visual-main {
+        width: 78%;
+        height: 66%;
+        left: 11%;
+        top: 10%;
+        transform: rotateY(-10deg) rotateX(7deg) scale(0.96);
+      }
+
+      .visual-side {
+        width: 46%;
+        height: 32%;
+      }
+
+      .side-one {
+        left: 0;
+        bottom: 8%;
+      }
+
+      .side-two {
+        right: 0;
+        top: 0;
+      }
+
+      .side-three {
+        right: 7%;
+        bottom: 0;
+        width: 36%;
+        height: 23%;
+      }
+
+      .visual-cube {
+        width: 66px;
+        height: 66px;
+        right: 10%;
+        top: 1%;
+      }
+
+      .visual-ring {
+        width: 260px;
+        height: 260px;
+        right: 0;
+        top: 24%;
+      }
+
+      .section {
+        padding: 84px 0;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card-media {
+        height: 210px;
+      }
+
+      .trust-panel,
+      .contact-card {
+        padding: 26px;
+        border-radius: 28px;
+      }
+
+      .feature-grid,
+      .contact-info-grid,
+      .mini-stat {
+        grid-template-columns: 1fr;
+      }
+
+      .map-card iframe {
+        height: 300px;
+      }
+
+      .footer-inner {
+        display: block;
+      }
+
+      .footer-links {
+        margin-top: 12px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="orb orb-one"></div>
+    <div class="orb orb-two"></div>
+    <div class="orb orb-three"></div>
+    <div class="cube-wrap">
+      <div class="cube">
+        <span class="face front"></span>
+        <span class="face back"></span>
+        <span class="face right"></span>
+        <span class="face left"></span>
+        <span class="face top"></span>
+        <span class="face bottom"></span>
+      </div>
+    </div>
+    <div class="sheet sheet-one"></div>
+    <div class="sheet sheet-two"></div>
+  </div>
+
+  <header class="navbar">
+    <div class="nav-inner">
+      <a class="logo" href="#home" aria-label="Kokila Printers home">
+        <span class="logo-mark">KP</span>
+        <span class="logo-text">
+          <strong>Kokila Printers</strong>
+          <span>Printing & Insurance</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#why">Why Us</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="btn btn-primary nav-cta" href="tel:+919976158371" aria-label="Call Kokila Printers">
+        Call Now
+      </a>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow reveal">Kokila Printers</p>
+          <h1 class="hero-title reveal">
+            Premium prints. Trusted insurance. One local partner.
+          </h1>
+          <p class="hero-subtitle reveal">
+            Professional printing and insurance services in Kottaipattinam — from invitations,
+            visiting cards and binding to vehicle, commercial and family health insurance support.
+          </p>
+
+          <div class="hero-actions reveal">
+            <a class="btn btn-primary" href="tel:+919976158371">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.9.34 1.78.63 2.63a2 2 0 0 1-.45 2.11L8 9.72a16 16 0 0 0 6.28 6.28l1.26-1.26a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.63A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Call +91 99761 58371
+            </a>
+            <a class="btn btn-secondary" href="#services">
+              Explore Services
+            </a>
+          </div>
+
+          <div class="hero-points reveal">
+            <div class="point">
+              <strong>14+</strong>
+              <span>Printing & insurance services</span>
+            </div>
+            <div class="point">
+              <strong>Mon–Sat</strong>
+              <span>9:00 AM – 7:00 PM</span>
+            </div>
+            <div class="point">
+              <strong>Local</strong>
+              <span>Near ICICI Bank, Kottaipattinam</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-label="3D collage of printing and insurance services">
+          <div class="visual-stage">
+            <div class="visual-ring"></div>
+
+            <div class="visual-cube" aria-hidden="true">
+              <span class="face front"></span>
+              <span class="face back"></span>
+              <span class="face right"></span>
+              <span class="face left"></span>
+              <span class="face top"></span>
+              <span class="face bottom"></span>
+            </div>
+
+            <div class="visual-card visual-main">
+              <img src="printer.png" alt="Professional printing press workspace" loading="eager">
+              <div class="visual-caption">
+                <strong>Premium local printing</strong>
+                <span>Invitations, cards, books, Xerox and binding services.</span>
+              </div>
+            </div>
+
+            <div class="visual-card visual-side side-one">
+              <img src="visit.png" alt="Visiting cards" loading="lazy">
+              <span class="mini-label">Visiting Cards</span>
+            </div>
+
+            <div class="visual-card visual-side side-two">
+              <img src="ins.png" alt="Insurance documents and planning" loading="lazy">
+              <span class="mini-label">Insurance Support</span>
+            </div>
+
+            <div class="visual-card visual-side side-three">
+              <img src="billing.png" alt="Bound books and documents" loading="lazy">
+              <span class="mini-label">Book Binding</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Services</p>
+            <h2 class="section-title">Clean, professional services for every print and insurance need.</h2>
+          </div>
+          <p class="section-copy">
+            Choose from fast local printing solutions and practical insurance services designed for individuals,
+            families, vehicles and businesses.
+          </p>
+        </div>
+
+        <div class="service-group">
+          <div class="group-title">
+            <span class="num">01</span>
+            <span>Printing Services</span>
+          </div>
+
+          <div class="service-grid">
+            <article class="service-card" tabindex="0">
+              <div class="card-lift">
+                <div class="card-media">
+                  <img src="invtation.png" alt="Elegant invitation cards" loading="lazy">
+                  <span class="service-tag">Print</span>
+                </div>
+                <div class="card-content">
+                  <h3>Invitation Printing</h3>
+                  <p>Elegant wedding, event and custom invitations with crisp typography and quality paper.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card" tabindex="0">
+              <div class="card-lift">
+                <div class="card-media">
+                  <img src="visting_card.png" alt="Business visiting cards" loading="lazy">
+                  <span class="service-tag">Print</span>
+                </div>
+                <div class="card-content">
+                  <h3>Visiting Cards</h3>
+                  <p>Compact business cards designed to make your brand look professional and memorable.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card" tabindex="0">
+              <div class="card-lift">
+                <div class="card-media">
+                  <img src="bill_books.png" alt="Business bill books and documents" loading="lazy">
+                  <span class="service-tag">Print</span>
+                </div>
+                <div class="card-content">
+                  <h3>Bill Books</h3>
+                  <p>Numbered bill books, quotation books and receipt pads for everyday business use.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card" tabindex="0">
+              <div class="card-lift">
+                <div class="card-media">
+                  <img src="sprial.png" alt="Spiral bound documents" loading="lazy">
+                  <span class="service-tag">Print</span>
+                </div>
+                <div class="card-content">
+                  <h3>Spiral Binding</h3>
+                  <p>Clean spiral-bound reports, notes, proposals and project files with neat finishing.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card" tabindex="0">
+              <div class="card-lift">
+                <div class="card-media">
+                  <img src="book_billing.png" alt="Books on a shelf" loading="lazy">
+                  <span class="service-tag">Print</span>
+                </div>
+                <div class="card-content">
+                  <h3>Book Binding</h3>
+                  <p>Durable binding for books, manuals, documents and presentation sets.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card" tabindex="0">
+              <div class="card-lift">
+                <div class="card-media">
+                  <img src="multi_inv.png" alt="Colorful paper for multi-color invitations" loading="lazy">
+                  <span class="service-tag">Print</span>
+                </div>
+                <div class="card-content">
+                  <h3>Multi-color Invitations</h3>
+                  <p>Vibrant multi-color prints for celebrations, programs and promotional cards.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card" tabindex="0">
+              <div class="card-lift">
+                <div class="card-media">
+                  <img src="xer.png" alt="Office copying and printing services" loading="lazy">
+                  <span class="service-tag">Print</span>
+                </div>
+                <div class="card-content">
+                  <h3>Xerox Services</h3>
+                  <p>Fast photocopy, document copying and everyday office print support.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="service-group">
+          <div class="group-title">
+            <span class="num">02</span>
+            <span>Insurance Services</span>
+          </div>
+
+          <div class="service-grid">
+            <article class="service-card" tabindex="0">
+              <div class="card-lift">
+                <div class="card-media">
+                  <img src="car_ins.png" alt="Car insurance service" loading="lazy">
+                  <span class="service-tag">Insurance</span>
+                </div>
+                <div class="card-content">
+                  <h3>Car Insurance</h3>
+                  <p>Comprehensive and third-party car insurance support for private vehicles.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card" tabindex="0">
+              <div class="card-lift">
+                <div class="card-media">
+                  <img src="bike_ins.png" alt="Bike and scooter insurance service" loading="lazy">
+                  <span class="service-tag">Insurance</span>
+                </div>
+                <div class="card-content">
+                  <h3>Bike/Scooter Insurance</h3>
+                  <p>Affordable two-wheeler insurance for daily commute and long-term protection.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card" tabindex="0">
+              <div class="card-lift">
+                <div class="card-media">
+                  <img src="bus_ins.png" alt="Bus and van insurance service" loading="lazy">
+                  <span class="service-tag">Insurance</span>
+                </div>
+                <div class="card-content">
+                  <h3>Bus/Van Insurance</h3>
+                  <p>Commercial vehicle insurance for buses, vans and passenger transport.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card" tabindex="0">
+              <div class="card-lift">
+                <div class="card-media">
+                  <img src="auto_ins.png" alt="Auto rickshaw insurance service" loading="lazy">
+                  <span class="service-tag">Insurance</span>
+                </div>
+                <div class="card-content">
+                  <h3>Auto Rickshaw Insurance</h3>
+                  <p>Insurance solutions tailored for auto rickshaw owners and drivers.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card" tabindex="0">
+              <div class="card-lift">
+                <div class="card-media">
+                  <img src="jcb_ins.png" alt="JCB and heavy vehicle insurance service" loading="lazy">
+                  <span class="service-tag">Insurance</span>
+                </div>
+                <div class="card-content">
+                  <h3>JCB / Heavy Vehicle</h3>
+                  <p>Coverage support for construction machines, JCBs and heavy commercial vehicles.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card" tabindex="0">
+              <div class="card-lift">
+                <div class="card-media">
+                  <img src="hea_ins.png" alt="Personal accident policy support" loading="lazy">
+                  <span class="service-tag">Insurance</span>
+                </div>
+                <div class="card-content">
+                  <h3>Personal Accident Policy</h3>
+                  <p>Personal accident cover for individuals, workers and business owners.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card" tabindex="0">
+              <div class="card-lift">
+                <div class="card-media">
+                  <img src="fam_ins.png" alt="Family health insurance support" loading="lazy">
+                  <span class="service-tag">Insurance</span>
+                </div>
+                <div class="card-content">
+                  <h3>Family Health Insurance</h3>
+                  <p>Family health protection plans with simple guidance and policy support.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="why">
+      <div class="container">
+        <div class="trust-panel">
+          <div class="trust-content">
+            <div class="trust-copy">
+              <p class="section-kicker">Why Kokila Printers</p>
+              <h2>Premium service with a minimal, professional approach.</h2>
+              <p>
+                We keep the process simple: understand your requirement, suggest the right option,
+                deliver quality work and support you with clear insurance guidance.
+              </p>
+            </div>
+
+            <div class="feature-grid">
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <h3>Quality Finish</h3>
+                <p>Clean prints, careful binding and professional presentation for every job.</p>
+              </div>
+
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M12 6v6l4 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <h3>Quick Support</h3>
+                <p>Fast local service for urgent prints, copies and insurance inquiries.</p>
+              </div>
+
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <h3>Trusted Guidance</h3>
+                <p>Practical insurance support for vehicles, families and commercial needs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Contact</p>
+            <h2 class="section-title">Visit Kokila Printers or connect instantly.</h2>
+          </div>
+          <p class="section-copy">
+            Located on Avudaiyar Kovil Road near ICICI Bank, Kottaipattinam.
+          </p>
+        </div>
+
+        <div class="contact-layout">
+          <div class="contact-card dark">
+            <p class="section-kicker">Open Hours</p>
+            <h2>MON - SAT<br>9:00 AM - 7:00 PM</h2>
+            <p>
+              Walk in for printing work or call us for insurance support.
+              Our team will guide you with simple, professional service.
+            </p>
+
+            <div class="contact-actions">
+              <a class="btn btn-primary" href="tel:+919976158371">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.9.34 1.78.63 2.63a2 2 0 0 1-.45 2.11L8 9.72a16 16 0 0 0 6.28 6.28l1.26-1.26a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.63A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Call Now
+              </a>
+              <a class="btn btn-secondary" href="mailto:kokilaprinterskpm@gmail.com">
+                Email Us
+              </a>
+            </div>
+
+            <div class="mini-stat">
+              <div class="stat">
+                <strong>7</strong>
+                <span>Printing services</span>
+              </div>
+              <div class="stat">
+                <strong>7</strong>
+                <span>Insurance services</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="contact-info-grid">
+              <a class="info-item" href="tel:+919976158371">
+                <span class="info-icon">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.9.34 1.78.63 2.63a2 2 0 0 1-.45 2.11L8 9.72a16 16 0 0 0 6.28 6.28l1.26-1.26a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.63A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span>
+                  <strong>Phone</strong>
+                  <small>+91 99761 58371</small>
+                </span>
+              </a>
+
+              <a class="info-item" href="mailto:kokilaprinterskpm@gmail.com">
+                <span class="info-icon">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="m22 6-10 7L2 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span>
+                  <strong>Email</strong>
+                  <small>kokilaprinterskpm@gmail.com</small>
+                </span>
+              </a>
+
+              <div class="info-item">
+                <span class="info-icon">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span>
+                  <strong>Address</strong>
+                  <small>Avudaiyar Kovil Road, Near ICICI Bank, Kottaipattinam, Tamil Nadu 614619</small>
+                </span>
+              </div>
+
+              <div class="info-item">
+                <span class="info-icon">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M8 2v4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16 2v4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3 10h18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span>
+                  <strong>Timing</strong>
+                  <small>MON - SAT : 9:00 AM - 7:00 PM</small>
+                </span>
+              </div>
+            </div>
+
+            <div class="map-card" style="margin-top: 14px;">
+              <iframe
+                src="https://www.google.com/maps?q=9.9799875,79.1939219&amp;z=15&amp;output=embed"
+                loading="lazy"
+                title="Google map showing Kokila Printers location">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© 2026 Kokila Printers. Printing & Insurance Services.</span>
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#why">Why Us</a>
+        <a href="https://www.google.com/maps/place/X5HV%2BXHV,+Kottaipattinam,+Tamil+Nadu,+India/@9.9799151,79.1939218,3a,16.9y,323.27h,91.9t/data=!3m7!1e1!3m5!1sLsGopy5oTONnZp4YsfvI4A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.9035814612728075%26panoid%3DLsGopy5oTONnZp4YsfvI4A%26yaw%3D323.26530203233506!7i13312!8i6656!4m13!1m7!3m6!1s0x3b0024b4acdb1047:0x130b3e8f497c4f68!2sX5HV%2BXHV,+Kottaipattinam,+Tamil+Nadu,+India!3b1!8m2!3d9.9799875!4d79.1939219!3m4!1s0x3b0024b4acdb1047:0x130b3e8f497c4f68!8m2!3d9.9799875!4d79.1939219?hl=en-GB&amp;entry=ttu&amp;g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Open Location</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script>
+    (function () {
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (!window.gsap) return;
+
+      if (window.ScrollTrigger) {
+        gsap.registerPlugin(ScrollTrigger);
+      }
+
+      if (reduceMotion) {
+        gsap.set(".reveal, .service-card, .feature-card, .contact-card, .info-item, .map-card", {
+          clearProps: "all"
+        });
+        return;
+      }
+
+      gsap.set(".reveal", { autoAlpha: 0, y: 28 });
+      gsap.to(".reveal", {
+        autoAlpha: 1,
+        y: 0,
+        duration: 0.9,
+        stagger: 0.075,
+        ease: "power3.out"
+      });
+
+      gsap.from(".visual-card", {
+        autoAlpha: 0,
+        y: 58,
+        rotateY: 24,
+        duration: 1.05,
+        stagger: 0.12,
+        delay: 0.22,
+        ease: "back.out(1.6)"
+      });
+
+      gsap.from(".visual-cube", {
+        autoAlpha: 0,
+        y: 34,
+        rotateY: -40,
+        duration: 1,
+        delay: 0.45,
+        ease: "power3.out"
+      });
+
+      gsap.to(".orb-one", {
+        x: 28,
+        y: 24,
+        duration: 7,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut"
+      });
+
+      gsap.to(".orb-two", {
+        x: -18,
+        y: -22,
+        duration: 8.5,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut"
+      });
+
+      gsap.to(".orb-three", {
+        x: 18,
+        y: -28,
+        duration: 9,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut"
+      });
+
+      gsap.to(".cube-wrap", {
+        rotateX: 34,
+        rotateY: 180,
+        duration: 16,
+        repeat: -1,
+        ease: "none"
+      });
+
+      document.querySelectorAll(".service-group").forEach(function (group) {
+        gsap.from(group.querySelectorAll(".service-card"), {
+          scrollTrigger: {
+            trigger: group,
+            start: "top 84%"
+          },
+          y: 48,
+          autoAlpha: 0,
+          duration: 0.78,
+          stagger: {
+            amount: 0.42,
+            each: 0.055
+          },
+          ease: "power3.out"
+        });
+      });
+
+      gsap.from(".feature-card", {
+        scrollTrigger: {
+          trigger: ".feature-grid",
+          start: "top 84%"
+        },
+        y: 32,
+        autoAlpha: 0,
+        duration: 0.72,
+        stagger: 0.12,
+        ease: "power3.out"
+      });
+
+      gsap.from(".contact-card, .info-item, .map-card", {
+        scrollTrigger: {
+          trigger: "#contact",
+          start: "top 80%"
+        },
+        y: 34,
+        autoAlpha: 0,
+        duration: 0.78,
+        stagger: 0.1,
+        ease: "power3.out"
+      });
+
+      const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+      if (finePointer) {
+        document.querySelectorAll(".service-card").forEach(function (card) {
+          const lift = card.querySelector(".card-lift");
+
+          card.addEventListener("pointermove", function (event) {
+            const rect = card.getBoundingClientRect();
+            const x = (event.clientX - rect.left) / rect.width;
+            const y = (event.clientY - rect.top) / rect.height;
+            const rotateY = (x - 0.5) * 10;
+            const rotateX = (0.5 - y) * 8;
+
+            gsap.to(lift, {
+              duration: 0.35,
+              y: -10,
+              rotateX: rotateX,
+              rotateY: rotateY,
+              scale: 1.012,
+              boxShadow: "0 32px 80px rgba(0, 0, 0, 0.18)",
+              ease: "power2.out"
+            });
+          });
+
+          card.addEventListener("pointerleave", function () {
+            gsap.to(lift, {
+              duration: 0.65,
+              y: 0,
+              rotateX: 0,
+              rotateY: 0,
+              scale: 1,
+              boxShadow: "0 16px 38px rgba(0, 0, 0, 0.08)",
+              ease: "elastic.out(1, 0.68)"
+            });
+          });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
